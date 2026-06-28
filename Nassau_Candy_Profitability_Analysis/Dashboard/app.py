@@ -49,7 +49,7 @@ st.markdown("""
 
 # ---------------- Load Dataset ---------------- #
 
-df = pd.read_csv("Nassau Candy Distributor.csv")
+df = pd.read_csv("../Dataset/Nassau Candy Distributor.csv")
 
 # ---------------- Cleaning ---------------- #
 
