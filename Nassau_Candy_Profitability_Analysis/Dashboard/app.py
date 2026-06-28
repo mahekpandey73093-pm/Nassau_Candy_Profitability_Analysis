@@ -49,7 +49,24 @@ st.markdown("""
 
 # ---------------- Load Dataset ---------------- #
 
-df = pd.read_csv("../Dataset/Nassau Candy Distributor.csv")
+ # ---------------- Load Dataset ---------------- #
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Dashboard ke parent folder se Dataset folder ka path
+DATA_PATH = os.path.join(BASE_DIR, "..", "Dataset", "Nassau Candy Distributor.csv")
+
+# Debug (baad me hata dena)
+st.write("Dataset Path:", DATA_PATH)
+st.write("File Exists:", os.path.exists(DATA_PATH))
+
+if not os.path.exists(DATA_PATH):
+    st.error(f"Dataset not found!\nExpected path: {DATA_PATH}")
+    st.stop()
+
+df = pd.read_csv(DATA_PATH)
 
 # ---------------- Cleaning ---------------- #
 
